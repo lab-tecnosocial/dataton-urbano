@@ -9,13 +9,16 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
+import { Link as MaterialLink } from '@mui/material/Link';
+import {Link, Routes, Route } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems, secondaryListItems } from './components/listItems';
+import { mainListItems } from './components/listItems';
+import Main from './components/Main';
+import EncuestaHogares from './components/EncuestaHogares';
+import EjecucionPresupuestaria from './components/EjecucionPresupuestaria';
+import CoparticipacionTributaria from './components/CoparticipacionTributaria';
+import VelocidadInternet from './components/VelocidadInternet';
 
 const drawerWidth = 300;
 
@@ -93,8 +96,11 @@ function DashboardContent() {
             >
               <MenuIcon />
             </IconButton>
+           
             <Typography
-              component="h1"
+              component={Link}
+              to="/"
+              style={{textDecoration: 'none'}}
               variant="h6"
               color="inherit"
               noWrap
@@ -102,6 +108,7 @@ function DashboardContent() {
             >
               Datatón Urbano
             </Typography>
+            
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -135,48 +142,22 @@ function DashboardContent() {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Typography>Hola 1</Typography>
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Typography>Hola 2</Typography>
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                <Typography>Hola 3</Typography>
-                </Paper>
-              </Grid>
-            </Grid>
-          </Container>
-        </Box>
+
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/encuesta-hogares" element={<EncuestaHogares />} />
+            <Route path="/ejecucion-presupuestaria" element={<EjecucionPresupuestaria />} />
+            <Route path="/coparticipacion-tributaria" element={<CoparticipacionTributaria />} />
+            <Route path="/velocidad-internet" element={<VelocidadInternet />} />
+
+        </Routes>
+
       </Box>
-    </ThemeProvider>
+    </Box>
+    </ThemeProvider >
   );
 }
 
-export default function Dashboard() {
+export default function App() {
   return <DashboardContent />;
 }
