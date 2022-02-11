@@ -9,9 +9,17 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import { Link } from 'react-router-dom';
+import LocationCityIcon from '@mui/icons-material/LocationCity';
+import DirectionsIcon from '@mui/icons-material/Directions';
 
 export const mainListItems = (
   <div>
+     <ListItem button component={Link} to="/cpi">
+      <ListItemIcon>
+        <LocationCityIcon />
+      </ListItemIcon>
+      <ListItemText primary="Indice de Prosperidad Urbana" />
+    </ListItem>
 
     <ListItem button component={Link} to="/encuesta-hogares">
       <ListItemIcon>
@@ -41,6 +49,12 @@ export const mainListItems = (
       <ListItemText primary="Velocidad de Internet" />
     </ListItem>
 
+    <ListItem button component={Link} to="/movilidad">
+      <ListItemIcon>
+        <DirectionsIcon />
+      </ListItemIcon>
+      <ListItemText primary="Movilidad" />
+    </ListItem>
 
   </div>
 );

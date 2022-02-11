@@ -19,6 +19,8 @@ import EncuestaHogares from './components/EncuestaHogares';
 import EjecucionPresupuestaria from './components/EjecucionPresupuestaria';
 import CoparticipacionTributaria from './components/CoparticipacionTributaria';
 import VelocidadInternet from './components/VelocidadInternet';
+import Cpi from './components/Cpi';
+import Movilidad from './components/Movilidad';
 
 const drawerWidth = 300;
 
@@ -145,11 +147,12 @@ function DashboardContent() {
 
           <Routes>
             <Route path="/" element={<Main />} />
+            <Route path="/cpi" element={<Cpi />} />
             <Route path="/encuesta-hogares" element={<EncuestaHogares />} />
             <Route path="/ejecucion-presupuestaria" element={<EjecucionPresupuestaria />} />
             <Route path="/coparticipacion-tributaria" element={<CoparticipacionTributaria />} />
             <Route path="/velocidad-internet" element={<VelocidadInternet />} />
-
+            <Route path="/movilidad" element={<Movilidad />} />
         </Routes>
 
       </Box>

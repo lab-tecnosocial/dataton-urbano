@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 
-export default function VelocidadInternet() {
+export default function CoparticipacionTributaria() {
     return (
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
@@ -18,8 +18,7 @@ export default function VelocidadInternet() {
                             height: 240,
                         }}
                     >
-                        <Typography variant='h5'>Velocidad de Internet</Typography>
-                        <Typography variant="body1">Descripción...</Typography>
+                        <Typography variant='h5'>Movilidad</Typography>
                     </Paper>
                 </Grid>
             </Grid>
